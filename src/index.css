@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+@import "tailwindcss";
+:root {
+  /* Brand Colors */
+  --color-primary: #007acc; /* ZimSmile Blue */
+  --color-accent: #00aeef; /* Sky accent */
+  --color-secondary: #4a4a4a; /* For text emphasis */
+  --color-muted: #888888;
+
+  /* UI Backgrounds */
+  --color-bg: #ffffff; /* Base background */
+  --color-bg-secondary: #f9f9f9; /* Cards, sections */
+  --color-bg-hover: #f1f1f1;
+  --color-bg-footer: #0f172a; /* Dark footer */
+
+  /* Text */
+  --color-text-primary: #1f2937; /* Almost black */
+  --color-text-secondary: #4b5563; /* Subtle text */
+  --color-text-on-primary: #ffffff;
+
+  /* Alerts & States */
+  --color-success: #10b981;
+  --color-error: #ef4444;
+  --color-warning: #f59e0b;
+  --color-info: #3b82f6;
+
+  /* Shadows */
+  --shadow-primary: 0 0.5rem 2rem #0f172a26;
+
+  /* Z-indexes */
+  --z-header: 1000;
+  --z-modal: 1100;
+  --z-tooltip: 1200;
+
+  /* Transitions */
+  --transition-default: 0.3s ease-in-out;
+}
+
+.dark {
+  /* Brand Colors */
+  --color-primary: #00aaff; /* Soft but vibrant blue */
+  --color-accent: #38cfff; /* Lighter accent for CTAs */
+  --color-secondary: #cfcfcf; /* Light grey for text emphasis */
+  --color-muted: #999999; /* Softer muted tone for dark backgrounds */
+
+  /* UI Backgrounds */
+  --color-bg: #0f172a; /* Main dark background (deep navy) */
+  --color-bg-secondary: #1e293b; /* Card or section backgrounds */
+  --color-bg-hover: #334155; /* Subtle hover background */
+  --color-bg-footer: #0a0f1c; /* Extra dark footer background */
+
+  /* Text */
+  --color-text-primary: #f1f5f9; /* Almost white, but easier on the eyes */
+  --color-text-secondary: #cbd5e1; /* Soft gray-blue for subtext */
+  --color-text-on-primary: #ffffff; /* For buttons on primary BG */
+
+  /* Alerts & States */
+  --color-success: #34d399; /* Emerald-400 */
+  --color-error: #f87171; /* Rose-400 */
+  --color-warning: #fbbf24; /* Amber-400 */
+  --color-info: #60a5fa; /* Blue-400 */
+
+  /* shadows */
+  --shadow-primary: 0 0.5rem 1.5rem #1515201a;
+}
+*,
+::after,
+::before {
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-weight: bold;
+}
+button,
+a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+li {
+  list-style: none;
+}
