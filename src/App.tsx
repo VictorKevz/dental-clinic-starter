@@ -1,6 +1,7 @@
-import { Navbar } from "./components/Header/Navbar";
+import { Navbar } from "./components/header/Navbar";
 import Hero from "./components/Hero/Hero";
 import { Services } from "./components/services/Services";
+import { Testimonials } from "./components/testimonials/Testimonials";
 import { ThemeProvider } from "./context/ThemeContext";
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
         <Navbar />
         <Hero />
         <Services />
+        <Testimonials />
       </main>
     </ThemeProvider>
   );

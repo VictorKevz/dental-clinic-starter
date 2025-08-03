@@ -14,8 +14,8 @@ export const Navbar = () => {
     { text: "Testimonials", url: "#testimonials" },
   ];
   return (
-    <div className="w-full">
-      <nav className="w-full flex items-center justify-between sticky top-0 h-[4.5rem] md:h-[5.5rem] bg-[var(--color-bg-secondary)] [box-shadow:var(--shadow-primary)] px-4 z-100">
+    <div className="w-full sticky top-0 z-100">
+      <nav className="w-full flex items-center justify-between relative h-[4.5rem] md:h-[5.5rem] bg-[var(--color-bg-secondary)] [box-shadow:var(--shadow-primary)] px-4 md:px-6 z-100">
         <div className="w-full flex items-center gap-8">
           <div className="flex items-center gap-1">
             <button
@@ -32,7 +32,7 @@ export const Navbar = () => {
               </span>
             </button>
             <a href="#" className="gap-1">
-              <img src="/logo1.png" alt="" className="w-8 md:w-10 h-auto" />
+              <img src="/logo.png" alt="" className="w-8 md:w-10 h-auto" />
               <h1 className="text-lg text-[var(--color-text-primary)] uppercase mt-1">
                 PearlDent
               </h1>
@@ -65,7 +65,7 @@ export const Navbar = () => {
                 rel="noopener noreferrer"
                 className="md:!hidden h-8.5 md:h-12  w-full bg-[var(--color-primary)] rounded-lg px-4 text-[var(--color-text-primary)] font-medium border border-transparent hover:border-[var(--color-primary)] hover:bg-transparent"
               >
-                Book Now
+                Book Appointment
               </a>
             </li>
           </ul>
@@ -76,9 +76,9 @@ export const Navbar = () => {
             href="#contact"
             target="_blank"
             rel="noopener noreferrer"
-            className="!hidden md:!flex h-8.5 w-fit md:h-12 md:max-w-[10rem] md:w-full bg-[var(--color-primary)] rounded-lg px-4 text-[var(--color-text-on-primary)] font-medium border border-transparent hover:border-[var(--color-primary)] hover:bg-transparent"
+            className="!hidden md:!flex h-8.5 w-fit md:h-12 md:max-w-[12rem] md:w-full bg-[var(--color-primary)] rounded-lg px-4 text-[var(--color-text-on-primary)] font-medium border border-transparent hover:border-[var(--color-primary)] hover:bg-transparent"
           >
-            Book Now
+            Book Appointment
           </a>
           <ToggleButton />
         </div>

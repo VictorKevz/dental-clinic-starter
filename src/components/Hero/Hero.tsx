@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative w-full h-[calc(100dvh-5.5rem)] flex flex-col items-center justify-center px-4 z-50"
+      className="relative w-full h-[calc(100dvh-5.5rem)] flex flex-col items-center justify-center px-4 md:px-6 z-50"
     >
       <header className="text-center max-w-screen-md w-full">
         <h2 className="text-[var(--color-text-primary)] text-2xl sm:text-5xl">
