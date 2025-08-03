@@ -1,6 +1,7 @@
 import { Star } from "@mui/icons-material";
 import { servicesData } from "./servicesData";
-
+import patterRight from "../../assets/images/pattern-right.svg";
+import patterLeft from "../../assets/images/pattern-left.svg";
 export const Services = () => {
   return (
     <section
@@ -24,10 +25,10 @@ export const Services = () => {
           </p>
         </div>
         <a
-          href="#"
-          className="mt-4 md:mt-0 inline-block px-6 py-2 rounded-lg bg-[var(--color-accent)] text-white font-medium hover:bg-[var(--color-accent-dark)] transition"
+          href="#contact"
+          className="max-w-[15rem] w-full px-4 h-12 rounded-lg bg-[var(--color-primary)] text-[var(--color-text-on-primary)] font-medium hover:bg-[var(--color-accent)] hover:scale-105 hover:opacity-90"
         >
-          View All Services
+          Book Appointment
         </a>
       </header>
       <div className=" w-full grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mx-auto z-20">
@@ -47,7 +48,7 @@ export const Services = () => {
               <h3 className="text-xl md:text-2xl text-[var(--color-text-primary)]">
                 {service.title}
               </h3>
-              <p className="text-base text-[var(--color-text-secondary)] mt-1">
+              <p className="text-sm text-[var(--color-text-secondary)] mt-1">
                 {service.description}
               </p>
             </div>
@@ -57,36 +58,37 @@ export const Services = () => {
           </article>
         ))}
       </div>
-      <div className="pointer-events-none absolute top-0 right-0 -z-10">
-        <img
-          src="/ui-deco.png"
-          alt=""
-          className=" h-auto w-[20rem] opacity-5 -rotate-15"
-        />
-      </div>
-      <div className="max-w-screen-lg w-full relative flex items-center justify-between px-4 py-6 rounded-xl bg-[var(--color-bg-hover)] mt-8  z-20">
-        <div>
-          <h3 className="text-3xl text-[var(--color-text-primary)]">
-            Get in touch today
+
+      <div className="max-w-screen-xl w-full min-h-[30vh] relative flex flex-col md:flex-row md:items-center justify-between gap-5 px-4 py-8 rounded-xl bg-[var(--color-bg-hover)] mt-8  z-20 overflow-hidden [box-shadow:var(--color-shadow)]">
+        <div className="max-w-lg w-full">
+          <h3 className="text-2xl md:text-4xl text-[var(--color-text-primary)]">
+            Get in touch today and see how best we can assist you.
           </h3>
           <p className="text-[var(--color-text-secondary)]">
             We are more than happy to assist with all your
           </p>
         </div>
         <a
-          href="#"
-          className="mt-4 md:mt-0 inline-block px-6 py-2 rounded-lg bg-[var(--color-accent)] text-white font-medium hover:bg-[var(--color-accent-dark)] transition"
+          href="#contact"
+          className="max-w-[15rem] w-full px-4 h-12 rounded-lg bg-[var(--color-primary)] text-[var(--color-text-on-primary)] font-medium hover:bg-[var(--color-accent)] hover:scale-105"
         >
-          View All Services
+          Book Appointment
         </a>
-        <div className="pointer-events-none absolute top-0 left-[50%] -z-10 overflow-hidden">
+        <figure className="pointer-events-none absolute right-0 -z-10 h-full">
           <img
-            src="/ui-deco.png"
+            src={patterRight}
             alt=""
-            className=" h-auto w-[8rem] opacity-5 -rotate-15 object-cover"
+            className=" h-full opacity-15 object-cover scale-150"
           />
-        </div>
+        </figure>
       </div>
+      <figure className="pointer-events-none absolute -top-10 left-0 -z-10 h-[30%] w-full">
+        <img
+          src={patterLeft}
+          alt=""
+          className="object-cover h-full opacity-15"
+        />
+      </figure>
     </section>
   );
 };

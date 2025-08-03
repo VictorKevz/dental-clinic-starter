@@ -84,7 +84,7 @@ export const Navbar = () => {
         </div>
       </nav>
       {isMenuOpen && (
-        <div className="fixed top-[4.5rem] left-0 w-full h-screen bg-[var(--color-overlay)] backdrop-blur-[.3rem] z-60"></div>
+        <div className="fixed top-0 left-0 w-full h-screen bg-[var(--color-overlay)] backdrop-blur-[.3rem] z-60"></div>
       )}
     </div>
   );
