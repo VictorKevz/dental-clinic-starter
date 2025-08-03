@@ -16,30 +16,32 @@ export const Navbar = () => {
   return (
     <div className="w-full">
       <nav className="w-full flex items-center justify-between sticky top-0 h-[4.5rem] md:h-[5.5rem] bg-[var(--color-bg-secondary)] [box-shadow:var(--shadow-primary)] px-4 z-100">
-        <div className="w-full flex items-center md:gap-6 relative">
-          <button
-            type="button"
-            onClick={toggleMenu}
-            className="text-[var(--color-text-primary)] md:!hidden"
-          >
-            <span>
-              {isMenuOpen ? (
-                <Close fontSize="large" />
-              ) : (
-                <Menu fontSize="large" />
-              )}
-            </span>
-          </button>
-          <a href="#" className="flex items-center gap-1">
-            <img src="/logo.png" alt="" className="w-8 sm:w-12 h-auto" />
-            <h1 className="text-sm sm:text-2xl text-[var(--color-text-primary)]">
-              ZimSmile
-            </h1>
-          </a>
+        <div className="w-full flex items-center gap-8">
+          <div className="flex items-center gap-1">
+            <button
+              type="button"
+              onClick={toggleMenu}
+              className="text-[var(--color-text-primary)] md:!hidden"
+            >
+              <span>
+                {isMenuOpen ? (
+                  <Close fontSize="large" />
+                ) : (
+                  <Menu fontSize="large" />
+                )}
+              </span>
+            </button>
+            <a href="#" className="gap-1">
+              <img src="/logo1.png" alt="" className="w-8 md:w-10 h-auto" />
+              <h1 className="text-lg text-[var(--color-text-primary)] uppercase mt-1">
+                PearlDent
+              </h1>
+            </a>
+          </div>
           <ul
             className={`text-[var(--color-text-secondary)] ${
               isMenuOpen
-                ? "flex flex-col gap-8 items-start absolute top-full mt-[2rem] left-0 md:relative"
+                ? "w-full bg-[var(--color-bg-secondary)] px-4 py-6 flex flex-col gap-8 items-center absolute top-full mt-2 left-0 md:relative"
                 : "hidden md:flex items-center gap-4"
             }`}
           >
@@ -56,6 +58,16 @@ export const Navbar = () => {
                 </li>
               );
             })}
+            <li className="w-full">
+              <a
+                href="#contact"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="md:!hidden h-8.5 md:h-12  w-full bg-[var(--color-primary)] rounded-lg px-4 text-[var(--color-text-primary)] font-medium border border-transparent hover:border-[var(--color-primary)] hover:bg-transparent"
+              >
+                Book Now
+              </a>
+            </li>
           </ul>
         </div>
 
@@ -64,7 +76,7 @@ export const Navbar = () => {
             href="#contact"
             target="_blank"
             rel="noopener noreferrer"
-            className="h-8.5 md:h-12 max-w-[8rem] w-full bg-[var(--color-primary)] rounded-lg px-4 text-[var(--color-text-primary)] font-medium border border-transparent hover:border-[var(--color-primary)] hover:bg-transparent"
+            className="!hidden md:!flex h-8.5 w-fit md:h-12 md:max-w-[10rem] md:w-full bg-[var(--color-primary)] rounded-lg px-4 text-[var(--color-text-on-primary)] font-medium border border-transparent hover:border-[var(--color-primary)] hover:bg-transparent"
           >
             Book Now
           </a>
@@ -72,7 +84,7 @@ export const Navbar = () => {
         </div>
       </nav>
       {isMenuOpen && (
-        <div className="fixed top-[4.5rem] left-0 w-full h-screen bg-[#00aaff1d] backdrop-blur-[.4rem] z-10"></div>
+        <div className="fixed top-[4.5rem] left-0 w-full h-screen bg-[var(--color-overlay)] backdrop-blur-[.3rem] z-60"></div>
       )}
     </div>
   );

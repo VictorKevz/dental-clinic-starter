@@ -13,7 +13,7 @@
   --color-bg-secondary: #f9f9f9; /* Cards, sections */
   --color-bg-hover: #f1f1f1;
   --color-bg-footer: #0f172a; /* Dark footer */
-
+  --color-overlay: #fafafa46;
   /* Text */
   --color-text-primary: #1f2937; /* Almost black */
   --color-text-secondary: #4b5563; /* Subtle text */
@@ -49,11 +49,11 @@
   --color-bg-secondary: #1e293b; /* Card or section backgrounds */
   --color-bg-hover: #334155; /* Subtle hover background */
   --color-bg-footer: #0a0f1c; /* Extra dark footer background */
+  --color-overlay: #0b212f79;
 
   /* Text */
-  --color-text-primary: #f1f5f9; /* Almost white, but easier on the eyes */
+  --color-text-primary: #f1f5f9; /* Almost white */
   --color-text-secondary: #cbd5e1; /* Soft gray-blue for subtext */
-  --color-text-on-primary: #ffffff; /* For buttons on primary BG */
 
   /* Alerts & States */
   --color-success: #34d399; /* Emerald-400 */
@@ -75,6 +75,7 @@ h2,
 h3,
 h4 {
   font-weight: bold;
+  line-height: 1.25;
 }
 button,
 a {
