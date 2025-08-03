@@ -1,6 +1,6 @@
 import { Star } from "@mui/icons-material";
-import { servicesData } from "./servicesData";
 import patterRight from "../../assets/images/pattern-right.svg";
+import { servicesData } from "./servicesData";
 export const Services = () => {
   return (
     <section

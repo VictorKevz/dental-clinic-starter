@@ -1,8 +1,8 @@
-import { Navbar } from "./components/header/Navbar";
-import Hero from "./components/Hero/Hero";
-import { Services } from "./components/services/Services";
+import { Navbar } from "./sections/Header/Navbar";
+import Hero from "./sections/Hero/Hero";
+import { Services } from "./sections/Services/Services";
 import { Stats } from "./components/Stats";
-import { Testimonials } from "./components/testimonials/Testimonials";
+import { Testimonials } from "./sections/Testimonials/Testimonials";
 import { ThemeProvider } from "./context/ThemeContext";
 
 function App() {

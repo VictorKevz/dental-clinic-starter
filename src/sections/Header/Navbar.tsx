@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ToggleButton from "../ToggleButton";
+import ToggleButton from "../../components/ToggleButton";
 import { Close, Menu } from "@mui/icons-material";
 
 export const Navbar = () => {
