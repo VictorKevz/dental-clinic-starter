@@ -1,0 +1,34 @@
+import patternRight from "../assets/images/stats-pattern.svg";
+
+export const Stats = () => {
+  return (
+    <article className="w-full min-h-[40dvh] relative flex items-center justify-center px-6 py-8  bg-[var(--color-primary)] z-20 overflow-hidden">
+      <ul className="max-w-screen-xl w-full flex flex-col md:flex-row items-center justify-between gap-5">
+        {statsData.map((item) => (
+          <li key={item.number} className="flex flex-col items-center">
+            <h3 className="text-4xl md:text-6xl !text-[var(--color-text-on-primary)]">
+              {item.number}+
+            </h3>
+            <p className="text-base md:text-lg !text-[var(--color-text-on-primary)] opacity-80 -mt-1">
+              {item.caption}
+            </p>
+          </li>
+        ))}
+      </ul>
+      <figure className="pointer-events-none absolute right-0 -z-10 h-full w-full  opacity-5">
+        <img
+          src={patternRight}
+          alt=""
+          className="h-full w-full object-cover scale-150 md:scale-100"
+        />
+      </figure>
+    </article>
+  );
+};
+
+const statsData = [
+  { number: 150, caption: "Procedures Done" },
+  { number: 20, caption: "Years Experience" },
+  { number: 5, caption: "Dental Experts" },
+  { number: 1000, caption: "Smiles Created" },
+];

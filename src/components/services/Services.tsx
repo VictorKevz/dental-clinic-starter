@@ -5,7 +5,7 @@ export const Services = () => {
   return (
     <section
       id="services"
-      className="w-full px-4 md:px-6 pt-24 pb-16 flex items-center flex-col min-h-[calc(100dvh-20dvh)] relative overflow-hidden z-20"
+      className="w-full px-4 md:px-6 pt-24 pb-16 flex items-center flex-col relative overflow-hidden z-20"
     >
       <header className="w-full flex flex-col md:flex-row items-start justify-between mb-8 z-20">
         <div className="max-w-2xl">
@@ -28,7 +28,7 @@ export const Services = () => {
           View All Services
         </a>
       </header>
-      <div className="w-full grid gap-6 md:grid-cols-2  mx-auto z-20 mt-10">
+      <div className="w-full grid gap-6 md:grid-cols-2 2xl:grid-cols-4 mx-auto z-20 mt-10">
         {servicesData.map((service) => (
           <article
             key={service.title}
@@ -56,34 +56,11 @@ export const Services = () => {
         ))}
       </div>
 
-      <div className="max-w-screen-xl w-full min-h-[30vh] relative flex flex-col md:flex-row md:items-center justify-between gap-5 px-4 py-8 rounded-xl bg-[var(--color-bg-hover)] mt-8  z-20 overflow-hidden [box-shadow:var(--shadow-primary)]">
-        <div className="max-w-lg w-full">
-          <h3 className="text-2xl md:text-4xl text-[var(--color-text-primary)]">
-            Get in touch today and see how best we can assist you.
-          </h3>
-          <p className="text-[var(--color-text-secondary)]">
-            We are more than happy to assist with all your
-          </p>
-        </div>
-        <a
-          href="#contact"
-          className="max-w-[15rem] w-full px-4 h-12 rounded-lg uppercase bg-[var(--color-primary)] text-[var(--color-text-on-primary)] font-medium hover:bg-[var(--color-accent)] hover:scale-105"
-        >
-          Book Appointment
-        </a>
-        <figure className="pointer-events-none absolute right-0 -z-10 h-full">
-          <img
-            src={patterRight}
-            alt=""
-            className=" h-full opacity-15 dark:opacity-10 object-cover scale-180"
-          />
-        </figure>
-      </div>
-      <figure className="pointer-events-none absolute -top-10 left-0 -z-10 h-[30%] w-full">
+      <figure className="pointer-events-none absolute left-0 top-0 -z-10 h-[30%] xl:h-full w-full">
         <img
           src={patterRight}
           alt=""
-          className="object-cover h-full dark:opacity-10 opacity-15 scale-150"
+          className="object-cover h-full w-full dark:opacity-5 opacity-15 2xl:scale-150"
         />
       </figure>
     </section>
