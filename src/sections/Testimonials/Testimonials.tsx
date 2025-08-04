@@ -5,8 +5,9 @@ import {
   ArrowForwardIos,
   Reviews,
   Star,
-  SvgIconComponent,
 } from "@mui/icons-material";
+import { ControlButton } from "../../components/ControlsButton";
+import { PaginationDots } from "../../components/PaginationDots";
 
 export const Testimonials = () => {
   const [currentPage, setCurrentPage] = useState(0);
@@ -25,6 +26,9 @@ export const Testimonials = () => {
   };
   const prevPage = () => {
     setCurrentPage((prev) => (prev - 1 + totalPages) % totalPages);
+  };
+  const updatePage = (i: number) => {
+    setCurrentPage(i);
   };
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 767px)");
@@ -98,43 +102,13 @@ export const Testimonials = () => {
               </article>
             );
           })}
-          <ul className="w-full flex items-center gap-1 justify-center md:col-span-2">
-            {Array.from({ length: totalPages }, (_, i) => {
-              const isCurrent = currentPage === i;
-              return (
-                <li key={i}>
-                  <button
-                    type="button"
-                    onClick={() => setCurrentPage(i)}
-                    className={`h-2 w-2 rounded-full ${
-                      isCurrent
-                        ? "bg-[var(--color-primary)]"
-                        : "bg-[var(--color-muted)]"
-                    }`}
-                  ></button>
-                </li>
-              );
-            })}
-          </ul>
+          <PaginationDots
+            totalPages={totalPages}
+            onUpdatePage={updatePage}
+            currentPage={currentPage}
+          />
         </div>
       </div>
     </section>
-  );
-};
-
-type ControlButtonProps = {
-  onControl: () => void;
-  Icon: SvgIconComponent;
-  side: "left" | "right";
-};
-const ControlButton = ({ onControl, Icon, side }: ControlButtonProps) => {
-  return (
-    <button
-      type="button"
-      onClick={onControl}
-      className={`h-10 w-10 rounded-full bg-[var(--color-bg)] text-[var(--color-text-primary)] [box-shadow:var(--shadow-primary)] hover:shadow-blue-400/30 hover:shadow-xl hover:scale-110`}
-    >
-      <Icon fontSize="small" className={`${side === "left" && "ml-1"}`} />
-    </button>
   );
 };

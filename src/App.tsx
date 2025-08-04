@@ -4,6 +4,7 @@ import { Services } from "./sections/Services/Services";
 import { Stats } from "./components/Stats";
 import { Testimonials } from "./sections/Testimonials/Testimonials";
 import { ThemeProvider } from "./context/ThemeContext";
+import { Gallery } from "./sections/Gallery/Gallery";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Hero />
         <Services />
         <Stats />
+        <Gallery />
         <Testimonials />
       </main>
     </ThemeProvider>
