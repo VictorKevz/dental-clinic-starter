@@ -45,7 +45,7 @@ export const Testimonials = () => {
       className="py-16 px-4 md:px-6 w-full flex flex-col items-center bg-[var(--color-bg-secondary)]"
     >
       <header className="flex flex-col items-center text-center max-w-2xl">
-        <span className="uppercase font-medium text-lg text-[var(--color-accent)] flex gap-1 items-center">
+        <span className="uppercase font-medium text-sm text-[var(--color-accent)] flex gap-1 items-center tracking-wide">
           <Reviews /> Our Clients Vouch for us
           <Reviews />
         </span>

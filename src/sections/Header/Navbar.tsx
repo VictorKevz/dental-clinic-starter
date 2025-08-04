@@ -8,8 +8,8 @@ export const Navbar = () => {
     setMenuOpen((prev) => !prev);
   };
   const navLinks = [
+    { text: "Home", url: "#" },
     { text: "Services", url: "#services" },
-    { text: "Gallery", url: "#gallery" },
     { text: "Contact", url: "#contact" },
     { text: "Testimonials", url: "#testimonials" },
   ];

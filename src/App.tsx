@@ -5,6 +5,7 @@ import { Stats } from "./components/Stats";
 import { Testimonials } from "./sections/Testimonials/Testimonials";
 import { ThemeProvider } from "./context/ThemeContext";
 import { Gallery } from "./sections/Gallery/Gallery";
+import { Contact } from "./sections/Contact/Contact";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Stats />
         <Gallery />
         <Testimonials />
+        <Contact />
       </main>
     </ThemeProvider>
   );
