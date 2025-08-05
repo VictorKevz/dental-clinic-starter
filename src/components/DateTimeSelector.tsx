@@ -1,5 +1,5 @@
 import { CalendarToday } from "@mui/icons-material";
-import React, { forwardRef, useState, useEffect } from "react";
+import { forwardRef, useState, useEffect } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { TimeSelector } from "./TimeSelector";
@@ -10,6 +10,8 @@ interface DateTimeSelectorProps {
   onDateChange?: (date: Date | null) => void;
   onTimeChange?: (timeValue: string) => void;
   label?: string;
+  dateError?: string;
+  timeError?: string;
 }
 
 // Custom input component with calendar icon
@@ -17,13 +19,16 @@ interface CustomInputProps {
   value?: string;
   onClick?: () => void;
   placeholder?: string;
+  hasError?: boolean;
 }
 
 const CustomInput = forwardRef<HTMLInputElement, CustomInputProps>(
-  ({ value, onClick, placeholder }, ref) => (
+  ({ value, onClick, placeholder, hasError }, ref) => (
     <div className="relative w-full">
       <input
-        className="date-time-picker-input pr-12"
+        className={`date-time-picker-input pr-12 ${
+          hasError ? "border-[var(--color-error)]" : ""
+        }`}
         onClick={onClick}
         ref={ref}
         value={value}
@@ -43,12 +48,14 @@ const CustomInput = forwardRef<HTMLInputElement, CustomInputProps>(
 
 CustomInput.displayName = "CustomInput";
 
-export const DateTimeSelector: React.FC<DateTimeSelectorProps> = ({
+export const DateTimeSelector = ({
   selectedDate,
   selectedTime = "",
   onDateChange,
   onTimeChange,
-}) => {
+  dateError,
+  timeError,
+}: DateTimeSelectorProps) => {
   const [internalDate, setInternalDate] = useState<Date | null>(
     selectedDate || null
   );
@@ -85,10 +92,15 @@ export const DateTimeSelector: React.FC<DateTimeSelectorProps> = ({
           placeholderText="Select Date"
           minDate={new Date()}
           filterDate={filterDates}
-          customInput={<CustomInput />}
+          customInput={<CustomInput hasError={!!dateError} />}
           calendarClassName="date-time-picker-calendar"
           wrapperClassName="date-time-picker-wrapper"
         />
+        {dateError && (
+          <span className="text-xs text-[var(--color-error)] pl-4 mt-1 block">
+            {dateError}
+          </span>
+        )}
       </div>
 
       {/* Time Selector */}
@@ -96,6 +108,7 @@ export const DateTimeSelector: React.FC<DateTimeSelectorProps> = ({
         selectedDate={internalDate}
         selectedTime={selectedTime}
         onChange={handleTimeChange}
+        errorMessage={timeError}
       />
     </fieldset>
   );

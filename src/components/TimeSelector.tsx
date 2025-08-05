@@ -11,6 +11,7 @@ interface TimeSelectorProps {
   selectedTime?: string;
   onChange?: (timeValue: string) => void;
   disabled?: boolean;
+  errorMessage?: string;
 }
 
 export const TimeSelector: React.FC<TimeSelectorProps> = ({
@@ -18,6 +19,7 @@ export const TimeSelector: React.FC<TimeSelectorProps> = ({
   selectedTime = "",
   onChange,
   disabled = false,
+  errorMessage,
 }) => {
   const [showTimeDropdown, setShowTimeDropdown] = useState(false);
 
@@ -82,7 +84,11 @@ export const TimeSelector: React.FC<TimeSelectorProps> = ({
         type="button"
         onClick={() => setShowTimeDropdown(!showTimeDropdown)}
         disabled={isDisabled}
-        className="w-full h-12 flex items-center !justify-between px-4 md:px-2 font-medium border border-[var(--color-muted)] text-[var(--color-text-primary)] bg-[var(--color-bg-secondary)] rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:border-[var(--color-accent)] transition-colors"
+        className={`w-full h-12 flex items-center !justify-between px-4 md:px-2 font-medium border text-[var(--color-text-primary)] bg-[var(--color-bg-secondary)] rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:border-[var(--color-accent)] transition-colors ${
+          errorMessage
+            ? "border-[var(--color-error)]"
+            : "border-[var(--color-muted)]"
+        }`}
       >
         <span className="flex items-center gap-1">
           <AccessTime className="text-[var(--color-primary)]" />
@@ -95,6 +101,12 @@ export const TimeSelector: React.FC<TimeSelectorProps> = ({
           {showTimeDropdown ? <KeyboardArrowUp /> : <KeyboardArrowDown />}
         </span>
       </button>
+
+      {errorMessage && (
+        <span className="text-xs text-[var(--color-error)] pl-4 mt-1">
+          {errorMessage}
+        </span>
+      )}
 
       {/* Time Dropdown */}
       {showTimeDropdown && timeSlots.length > 0 && (

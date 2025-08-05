@@ -31,32 +31,29 @@ export type InputFieldItem = {
   value: string;
   placeholder: string;
   label: string;
-  isValid: boolean;
 };
 
 export type InputChangeEvent = React.ChangeEvent<HTMLInputElement>;
 export type InputTextFieldProps = {
   field: InputFieldItem;
   onChange: (e: InputChangeEvent) => void;
+  errorMessage: string;
 };
 
 // .................TEXT AREA TYPES.....................
 export type MessageType = {
   message: string;
-  isValid: boolean;
-  errorMessage: string;
 };
 
 export const EmptymessageType: MessageType = {
   message: "",
-  isValid: true,
-  errorMessage: "",
 };
 export type TextAreaChangeEvent = React.ChangeEvent<HTMLTextAreaElement>;
 
 export type TextAreaFieldProps = {
   message: MessageType;
   onChange: (e: TextAreaChangeEvent) => void;
+  errorMessage?: string; // Add error message prop for display
 };
 
 // .................DROPDOWN TYPES.....................
@@ -64,4 +61,26 @@ export type DropDownProps = {
   onSelect: (option: string) => void;
   selections: string[];
 };
-export type FormSubmitEvent = React.FormEvent<HTMLFormElement>;
+
+// .................FIELD ERROR MESSAGES TYPES.....................
+export type FieldErrorMessage = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  message: string;
+  services: string;
+  appointmentDate: string;
+  appointmentTime: string;
+};
+
+export const EmptyFieldErrorMessage: FieldErrorMessage = {
+  firstName: "",
+  lastName: "",
+  email: "",
+  phone: "",
+  message: "",
+  services: "",
+  appointmentDate: "",
+  appointmentTime: "",
+};

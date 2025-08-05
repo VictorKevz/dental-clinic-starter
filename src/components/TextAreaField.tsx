@@ -1,6 +1,10 @@
 import { TextAreaChangeEvent, TextAreaFieldProps } from "../types/contact";
 
-export const TextAreaField = ({ message, onChange }: TextAreaFieldProps) => {
+export const TextAreaField = ({
+  message,
+  onChange,
+  errorMessage,
+}: TextAreaFieldProps) => {
   return (
     <div className="w-full flex flex-col">
       <label
@@ -16,8 +20,17 @@ export const TextAreaField = ({ message, onChange }: TextAreaFieldProps) => {
         rows={4}
         placeholder="I would like to..."
         onChange={(e: TextAreaChangeEvent) => onChange(e)}
-        className={`w-full border border-[var(--color-muted)] text-[var(--color-text-primary)] px-4 py-3 rounded-lg placeholder:text-[var(--color-text-secondary)] resize-none`}
+        className={`w-full border ${
+          errorMessage
+            ? "border-[var(--color-error)]"
+            : "border-[var(--color-muted)]"
+        } text-[var(--color-text-primary)] px-4 py-3 rounded-lg placeholder:text-[var(--color-text-secondary)] resize-none`}
       ></textarea>
+      {errorMessage && (
+        <span className="text-xs text-[var(--color-error)] pl-4 mt-1">
+          {errorMessage}
+        </span>
+      )}
     </div>
   );
 };
