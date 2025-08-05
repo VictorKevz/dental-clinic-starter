@@ -12,13 +12,16 @@ import {
 } from "../../types/contact";
 import { InputTextField } from "../../components/InputTextField";
 import { TextAreaField } from "../../components/TextAreaField";
+import { FormButton } from "../../components/FormButton";
 import {
   KeyboardArrowDown,
   KeyboardArrowUp,
+  Backspace,
   WhatsApp,
 } from "@mui/icons-material";
 import { DropDown } from "../../components/DropDown";
 import { DateTimeSelector } from "../../components/DateTimeSelector";
+import { useAlertProvider } from "../../context/AlertContext";
 
 export const Form = () => {
   // .................. FORM STATES.............................................................
@@ -27,13 +30,13 @@ export const Form = () => {
   const [showDropDown, setShowDropDown] = useState<boolean>(false);
   const [selections, setSelections] = useState<string[]>([]);
   const [selectedDate, setSelectedDate] = useState<Date | null>(
-    new Date(Date.now() + 24 * 60 * 60 * 1000) // Tomorrow
+    new Date(Date.now() + 24 * 60 * 60 * 1000)
   );
   const [selectedTime, setSelectedTime] = useState<string>("");
   const [fieldErrors, setFieldErrors] = useState<FieldErrorMessage>(
     EmptyFieldErrorMessage
   );
-
+  const { onShowAlert } = useAlertProvider();
   // .................. FORM ONCHANGE EVENT HANDLERS................................................
   const handleInputChange = useCallback(
     (e: InputChangeEvent) => {
@@ -183,15 +186,6 @@ export const Form = () => {
     // Validate Appointment Date
     if (!selectedDate) {
       errors.appointmentDate = "Please select an appointment date";
-      // } else {
-      //   const today = new Date();
-      //   today.setHours(0, 0, 0, 0);
-      //   const appointmentDate = new Date(selectedDate);
-      //   appointmentDate.setHours(0, 0, 0, 0);
-
-      //   if (appointmentDate < today) {
-      //     errors.appointmentDate = "Appointment date cannot be in the past";
-      //   }
     }
 
     // Validate Appointment Time
@@ -215,14 +209,23 @@ export const Form = () => {
 
       // Validate the form first
       if (!validateForm()) {
-        console.error("Please fix the form errors before submitting");
+        onShowAlert({
+          message: "Please fix the form errors before submitting",
+          type: "error",
+          visible: true,
+        });
         return;
       }
 
       const appointmentDateTime = getSelectedDateTime();
 
       if (!appointmentDateTime) {
-        console.error("Please select both date and time for your appointment");
+        onShowAlert({
+          message: "Please select both date and time for your appointment",
+          type: "error",
+          visible: true,
+        });
+        console.error("");
         return;
       }
 
@@ -237,18 +240,35 @@ export const Form = () => {
       };
 
       console.log("Form submission data:", formData);
+      onShowAlert(
+        {
+          message: "Your Appointment has been successfully booked!",
+          type: "success",
+          visible: true,
+        },
+        4000
+      );
+      resetForm();
     },
     [
+      validateForm,
+      getSelectedDateTime,
       inputField,
-      message,
+      message.message,
       selections,
       selectedDate,
       selectedTime,
-      getSelectedDateTime,
-      validateForm,
+      onShowAlert,
     ]
   );
-
+  const resetForm = () => {
+    setInputField(EmptyInputField);
+    setSelections([]);
+    setMessage(EmptymessageType);
+    setSelectedDate(new Date(Date.now() + 24 * 60 * 60 * 1000));
+    setSelectedTime("");
+    setFieldErrors(EmptyFieldErrorMessage);
+  };
   const fieldsData: InputFieldItem[] = [
     {
       id: "firstName",
@@ -345,13 +365,18 @@ export const Form = () => {
           errorMessage={fieldErrors.message}
         />
       </fieldset>
-      <footer className="w-full flex justify-end px-4 md:px-5 mt-4">
-        <button
-          type="submit"
-          className="h-12 max-w-[10rem] w-full gap-1 bg-[var(--color-primary)] rounded-lg text-[var(--color-text-on-primary)]"
+      <footer className="w-full flex flex-col gap-4 sm:flex-row justify-between px-4 md:px-5 mt-4">
+        <FormButton
+          type="button"
+          onClick={resetForm}
+          variant="secondary"
+          icon={<Backspace />}
         >
-          <WhatsApp /> Send
-        </button>
+          Clear Form
+        </FormButton>
+        <FormButton type="submit" variant="primary" icon={<WhatsApp />}>
+          Book Appointment
+        </FormButton>
       </footer>
     </form>
   );
