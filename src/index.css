@@ -1,17 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 @import "tailwindcss";
+@import "./styles/datepicker.css";
 :root {
   /* Brand Colors */
   --color-primary: #007acc;
   --color-accent: #00aeef; /* Sky accent */
   --color-secondary: #4a4a4a; /* For text emphasis */
-  --color-muted: #888888;
+  --color-muted: #88888870;
 
   /* UI Backgrounds */
   --color-bg: #ffffff; /* Base background */
   --color-bg-secondary: #f9f9f9; /* Cards, sections */
-  --color-bg-hover: #f1f1f1;
+  --color-bg-hover: #f2f2f2;
   --color-bg-footer: #0f172a; /* Dark footer */
   --color-overlay: #fafafa6f;
   /* Text */
@@ -42,7 +43,7 @@
   --color-primary: #00aaff; /* Soft but vibrant blue */
   --color-accent: #38cfff; /* Lighter accent for CTAs */
   --color-secondary: #cfcfcf; /* Light grey for text emphasis */
-  --color-muted: #999999; /* Softer muted tone for dark backgrounds */
+  --color-muted: #99999949; /* Softer muted tone for dark backgrounds */
 
   /* UI Backgrounds */
   --color-bg: #0f172a; /* Main dark background (deep navy) */
@@ -63,7 +64,7 @@
 
   /* shadows */
   --shadow-primary: 0 0.5rem 1.5rem #1047622a;
-  --shadow-color: 0 0.5rem 1.5rem #00aaff;
+  --shadow-color: 0 0.5rem 1.5rem #00aaff29;
 }
 *,
 ::after,
@@ -112,4 +113,15 @@ li {
 }
 .nav-link:hover::before {
   transform: scaleX(1);
+}
+input:focus,
+input:active,
+input:hover,
+textarea:focus,
+textarea:active,
+textarea:hover {
+  outline: none;
+  border: 1px solid var(--color-accent);
+  cursor: pointer;
+  transition: var(--transition-default);
 }

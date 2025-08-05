@@ -1,5 +1,6 @@
 export const servicesData = [
   {
+    id: "teethWhitening",
     title: "Teeth Whitening",
     description:
       "Brighten your smile with our safe, effective teeth whitening treatments for noticeably whiter teeth in minutes.",
@@ -7,6 +8,7 @@ export const servicesData = [
     icon: "/services/icons/teeth-whitening.png",
   },
   {
+    id: "dentalImplants",
     title: "Dental Implants",
     description:
       "Restore missing teeth with durable dental implants that look, feel, and function just like your natural teeth.",
@@ -14,6 +16,7 @@ export const servicesData = [
     icon: "/services/icons/dental-implants.png",
   },
   {
+    id: "orthodontics",
     title: "Orthodontics",
     description:
       "Straighten misaligned teeth and improve your bite with our modern orthodontic solutions, including clear aligners.",
@@ -21,6 +24,7 @@ export const servicesData = [
     icon: "/services/icons/orthodontics.png",
   },
   {
+    id: "rootCanal",
     title: "Root Canal Therapy",
     description:
       "Save infected or damaged teeth with gentle root canal therapy, relieving pain and restoring dental health quickly.",
@@ -37,7 +41,7 @@ export const servicesData = [
   //   {
   //     title: "Cosmetic Dentistry",
   //     description:
-  //       "Enhance your smile’s appearance with cosmetic dentistry services, including veneers, bonding, and smile makeovers today.",
+  //       "Enhance your smile's appearance with cosmetic dentistry services, including veneers, bonding, and smile makeovers today.",
   //     cover: "/services/covers/cosmetic-dentistry.webp",
   //     icon: "/services/icons/cosmetic-dentistry.png",
   //   },

@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef, useCallback } from "react";
-import { galleryData } from "./galleryData";
+import { galleryData } from "../../data/galleryData";
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 import { ControlButton } from "../../components/ControlsButton";
 import { PaginationDots } from "../../components/PaginationDots";

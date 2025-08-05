@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { testimonials } from "./testimonialData";
+import { testimonials } from "../../data/testimonialData";
 import {
   ArrowBackIos,
   ArrowForwardIos,

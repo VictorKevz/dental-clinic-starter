@@ -1,6 +1,7 @@
 import { WorkingHours } from "./WorkingHours";
 import patternRight from "../../assets/images/pattern-right.svg";
 import { ContactPhone } from "@mui/icons-material";
+import { Form } from "./Form";
 
 export const Contact = () => {
   return (
@@ -19,10 +20,8 @@ export const Contact = () => {
           We'd love to hear from you! Reach out with your questions or feedback.
         </p>
       </header>
-      <div className="max-w-screen-xl w-full grid lg:grid-cols-3 items-end justify-center gap-10 mt-10">
-        <form className="w-full h-full col-span-2 bg-[var(--color-bg-hover)] rounded-xl min-h-[20vh] [box-shadow:var(--shadow-primary)]">
-          My Form Here!
-        </form>
+      <div className="max-w-screen-xl w-full grid lg:grid-cols-3 items-center justify-center gap-10 mt-10">
+        <Form />
         <WorkingHours />
       </div>
       <figure className="w-full pointer-events-none absolute right-0 top-0 -z-10 opacity-5">

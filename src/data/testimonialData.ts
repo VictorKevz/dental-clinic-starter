@@ -11,7 +11,7 @@ export const testimonials = [
     title: "Entrepreneur",
     avatar: "/testimonials/avatars/blessing.webp",
     quote:
-      "From the front desk to the dental chair, the service was outstanding. Clean space, great equipment, and real care. I’ll definitely be back!",
+      "From the front desk to the dental chair, the service was outstanding. Clean space, great equipment, and real care. I'll definitely be back!",
   },
   {
     name: "Chenai R.",
@@ -39,6 +39,6 @@ export const testimonials = [
     title: "IT Technician",
     avatar: "/testimonials/avatars/leon.webp",
     quote:
-      "Tech-savvy, modern, and customer-focused. This is hands down the best dental clinic I’ve visited in Zimbabwe. Highly recommend!",
+      "Tech-savvy, modern, and customer-focused. This is hands down the best dental clinic I've visited in Zimbabwe. Highly recommend!",
   },
 ];
