@@ -1,13 +1,19 @@
 import patternRight from "../assets/images/pattern-left.svg";
+import { AnimatedCounter } from "./AnimatedCounter";
 
 export const Stats = () => {
   return (
     <article className="w-full min-h-[40dvh] 2xl:min-h-[30dvh] relative flex items-center justify-center px-6 py-8  bg-[var(--color-primary)] z-20 overflow-hidden">
       <ul className="max-w-screen-xl w-full flex flex-col md:flex-row items-center justify-between gap-5">
-        {statsData.map((item) => (
+        {statsData.map((item, index) => (
           <li key={item.number} className="flex flex-col items-center">
             <h3 className="text-4xl md:text-6xl !text-[var(--color-text-on-primary)]">
-              {item.number}+
+              <AnimatedCounter
+                value={item.number}
+                suffix="+"
+                duration={2 + index * 0.5}
+                className="font-bold"
+              />
             </h3>
             <p className="text-base md:text-lg !text-[var(--color-text-on-primary)] opacity-80 -mt-1">
               {item.caption}

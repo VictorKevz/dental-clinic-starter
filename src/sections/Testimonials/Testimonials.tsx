@@ -8,10 +8,13 @@ import {
 } from "@mui/icons-material";
 import { ControlButton } from "../../components/Buttons/ControlsButton";
 import { PaginationDots } from "../../components/Buttons/PaginationDots";
+import { AnimatePresence, motion } from "framer-motion";
+import { SlideVariants, TextFadeVariants } from "../../variants";
 
 export const Testimonials = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
+  const [direction, setDirection] = useState(1); // 1 for next, -1 for prev
 
   const pageSize = isMobile ? 1 : 2;
   const totalPages = Math.ceil(testimonials.length / pageSize);
@@ -23,9 +26,11 @@ export const Testimonials = () => {
 
   const nextPage = () => {
     setCurrentPage((prev) => (prev + 1) % totalPages);
+    setDirection(1);
   };
   const prevPage = () => {
     setCurrentPage((prev) => (prev - 1 + totalPages) % totalPages);
+    setDirection(-1);
   };
   const updatePage = (i: number) => {
     setCurrentPage(i);
@@ -44,18 +49,28 @@ export const Testimonials = () => {
       id="testimonials"
       className="py-16 px-4 md:px-6 w-full flex flex-col items-center bg-[var(--color-bg-secondary)]"
     >
-      <header className="flex flex-col items-center text-center max-w-2xl">
-        <span className="uppercase font-medium text-sm text-[var(--color-accent)] flex gap-1 items-center tracking-wide">
-          <Reviews /> Our Clients Vouch for us
-          <Reviews />
-        </span>
-        <h2 className="text-3xl md:text-5xl">What Our Clients Say</h2>
-        <p className="text-base md:text-lg text-[var(--color-text-secondary)]">
-          Don't just take our word for it—see what our clients have to say about
-          their experiences with us. Your satisfaction is our top priority, and
-          your feedback inspires us to keep improving.
-        </p>
-      </header>
+      <AnimatePresence mode="wait">
+        <motion.header
+          key={currentPage + "text"}
+          custom={direction}
+          variants={TextFadeVariants}
+          initial="initial"
+          animate="animate"
+          exit="exit"
+          className="flex flex-col items-center text-center max-w-2xl"
+        >
+          <span className="uppercase font-medium text-sm text-[var(--color-accent)] flex gap-1 items-center tracking-wide">
+            <Reviews /> Our Clients Vouch for us
+            <Reviews />
+          </span>
+          <h2 className="text-3xl md:text-5xl">What Our Clients Say</h2>
+          <p className="text-base md:text-lg text-[var(--color-text-secondary)]">
+            Don't just take our word for it—see what our clients have to say
+            about their experiences with us. Your satisfaction is our top
+            priority, and your feedback inspires us to keep improving.
+          </p>
+        </motion.header>
+      </AnimatePresence>
       <div className="max-w-screen-xl w-full flex flex-col items-center justify-center relative mt-6">
         <div className="w-full flex gap-4 justify-end">
           <ControlButton onControl={prevPage} Icon={ArrowBackIos} side="left" />
@@ -68,8 +83,13 @@ export const Testimonials = () => {
         <div className="w-full grid md:grid-cols-2 gap-8 relative mt-6">
           {currentTestimonials.map((card) => {
             return (
-              <article
+              <motion.article
                 key={card.name}
+                custom={direction}
+                variants={SlideVariants}
+                initial="enter"
+                animate="center"
+                exit="exit"
                 className="w-full bg-[var(--color-bg-hover)] rounded-xl [box-shadow:var(--shadow-primary)]"
               >
                 <header className="w-full flex items-center justify-between gap-5 bg-[var(--color-bg)] rounded-t-xl px-4 py-6">
@@ -99,7 +119,7 @@ export const Testimonials = () => {
                     {card.quote}
                   </p>
                 </footer>
-              </article>
+              </motion.article>
             );
           })}
           <PaginationDots

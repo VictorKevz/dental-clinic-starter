@@ -21,6 +21,7 @@
     "@types/react-datepicker": "^6.2.0",
     "framer-motion": "^12.6.3",
     "react": "^19.0.0",
+    "react-countup": "^6.5.3",
     "react-datepicker": "^8.4.0",
     "react-dom": "^19.0.0",
     "tailwindcss": "^4.1.3"
