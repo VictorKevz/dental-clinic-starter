@@ -1,5 +1,4 @@
 import { useState } from "react";
-// import ToggleButton from "../../components/ToggleButton";
 import { Close, Menu } from "@mui/icons-material";
 import { CTALink } from "../../components/CTALink";
 
@@ -8,6 +7,36 @@ export const Navbar = () => {
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
   };
+
+  const handleSmoothScroll = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    targetId: string
+  ) => {
+    e.preventDefault();
+
+    setMenuOpen(false);
+
+    if (targetId === "#" || targetId === "#home") {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    } else {
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        const navbarHeight = 60;
+        const elementPosition = targetElement.getBoundingClientRect().top;
+        const offsetPosition =
+          elementPosition + window.pageYOffset - navbarHeight;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }
+    }
+  };
+
   const navLinks = [
     { text: "Home", url: "#" },
     { text: "Services", url: "#services" },
@@ -19,7 +48,7 @@ export const Navbar = () => {
       <nav className="w-full flex items-center justify-between relative h-[4.5rem] md:h-[5.5rem] bg-[var(--color-bg-secondary)] [box-shadow:var(--shadow-primary)] px-4 md:px-6 z-100">
         <div className="flex items-center gap-1">
           <a href="#" className="gap-1">
-            <img src="/logo.png" alt="" className="w-8 md:w-10 h-auto" />
+            <img src="/logo.png" alt="" className="min-w-8 w-10 h-auto" />
             <h1 className="text-lg text-[var(--color-text-primary)] uppercase mt-1">
               PearlDent
             </h1>
@@ -29,16 +58,17 @@ export const Navbar = () => {
           className={`text-[var(--color-text-secondary)] ${
             isMenuOpen
               ? "w-full bg-[var(--color-bg-secondary)] px-4 py-6 flex flex-col gap-8 items-center absolute top-full mt-2 left-0 lg:relative"
-              : "hidden lg:flex items-center gap-4"
+              : "hidden lg:flex items-center gap-8"
           }`}
         >
           {navLinks.map((link) => {
             return (
               <li key={link.text}>
                 <a
+                  onClick={(e) => handleSmoothScroll(e, link.url)}
                   href={link.url}
                   rel="noopener noreferrer"
-                  className="nav-link relative w-fit text-xl !font-normal md:text-base hover:text-[var(--color-accent)]"
+                  className="nav-link relative w-fit text-xl !font-normal md:text-base hover:text-[var(--color-accent)] cursor-pointer"
                 >
                   {link.text}
                 </a>
@@ -51,6 +81,7 @@ export const Navbar = () => {
               href="#contact"
               variant="primary"
               className="lg:!hidden"
+              onClick={(e) => handleSmoothScroll(e, "#contact")}
             />
           </li>
         </ul>
@@ -60,9 +91,9 @@ export const Navbar = () => {
             href="#contact"
             variant="primary"
             className="!hidden lg:!flex h-8.5 w-fit lg:h-12 lg:max-w-[12rem] lg:w-full"
+            onClick={(e) => handleSmoothScroll(e, "#contact")}
           />
 
-          {/* <ToggleButton /> */}
           <button
             type="button"
             onClick={toggleMenu}

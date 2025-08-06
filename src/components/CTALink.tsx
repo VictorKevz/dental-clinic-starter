@@ -4,6 +4,7 @@ interface CTALinkProps {
   variant: "primary" | "secondary";
   icon?: React.ReactNode;
   className?: string;
+  onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
 }
 
 export const CTALink = ({
@@ -12,6 +13,7 @@ export const CTALink = ({
   href,
   className = "",
   icon,
+  onClick,
 }: CTALinkProps) => {
   const baseClasses =
     "h-12 min-w-max w-full w-full gap-1 rounded-lg px-4 [box-shadow:var(--shadow-primary)] dark:hover:scale-95 hover:-translate-x-1 hover:text-[var(--color-text-on-primary)]";
@@ -26,6 +28,7 @@ export const CTALink = ({
     <a
       rel="noopener noreferrer"
       href={href}
+      onClick={onClick}
       className={`${baseClasses} ${variantClasses[variant]} ${className}`}
     >
       {icon} {text}

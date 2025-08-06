@@ -126,3 +126,10 @@ textarea:hover {
   cursor: pointer;
   transition: var(--transition-default);
 }
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #0b212f79;
+  z-index: -1;
+}

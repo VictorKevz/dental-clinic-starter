@@ -6,8 +6,8 @@ import {
   Reviews,
   Star,
 } from "@mui/icons-material";
-import { ControlButton } from "../../components/ControlsButton";
-import { PaginationDots } from "../../components/PaginationDots";
+import { ControlButton } from "../../components/Buttons/ControlsButton";
+import { PaginationDots } from "../../components/Buttons/PaginationDots";
 
 export const Testimonials = () => {
   const [currentPage, setCurrentPage] = useState(0);

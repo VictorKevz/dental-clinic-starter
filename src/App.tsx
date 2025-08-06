@@ -9,6 +9,7 @@ import { Contact } from "./sections/Contact/Contact";
 import { AlertProvider } from "./context/AlertContext";
 import { AlertMessage } from "./components/Alert";
 import { Footer } from "./sections/Footer/Footer";
+import { FloatingButton } from "./components/Buttons/FloatingButton";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Footer />
         </main>
         <AlertMessage />
+        <FloatingButton />
       </AlertProvider>
     </ThemeProvider>
   );

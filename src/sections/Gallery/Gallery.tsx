@@ -1,8 +1,8 @@
 import { useEffect, useState, useRef, useCallback } from "react";
 import { galleryData } from "../../data/galleryData";
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
-import { ControlButton } from "../../components/ControlsButton";
-import { PaginationDots } from "../../components/PaginationDots";
+import { ControlButton } from "../../components/Buttons/ControlsButton";
+import { PaginationDots } from "../../components/Buttons/PaginationDots";
 
 export const Gallery = () => {
   const [currentindex, setCurrrentIndex] = useState(0);
@@ -89,7 +89,7 @@ export const Gallery = () => {
           className="w-full h-full object-cover"
         />
       </figure>
-      <div className="absolute w-full h-full bg-[#0b212f79] -z-1"></div>
+      <div className="overlay"></div>
     </section>
   );
 };

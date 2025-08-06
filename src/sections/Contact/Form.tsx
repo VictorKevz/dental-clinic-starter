@@ -12,7 +12,7 @@ import {
 } from "../../types/contact";
 import { InputTextField } from "../../components/InputTextField";
 import { TextAreaField } from "../../components/TextAreaField";
-import { FormButton } from "../../components/FormButton";
+import { FormButton } from "../../components/Buttons/FormButton";
 import {
   KeyboardArrowDown,
   KeyboardArrowUp,

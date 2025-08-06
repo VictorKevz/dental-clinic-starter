@@ -9,7 +9,7 @@ const Hero = () => {
       className="relative w-full h-[calc(100dvh-5.5rem)] flex flex-col items-center justify-center px-4 md:px-6 z-50"
     >
       <header className="text-center max-w-screen-md w-full">
-        <h2 className="text-[var(--color-text-primary)] text-3xl sm:text-5xl">
+        <h2 className="!text-[var(--color-text-on-primary)] text-3xl sm:text-5xl">
           Modern Dental Care <br /> Delivered with a Smile.
         </h2>
         <p className="text-lg !text-[var(--color-text-on-primary)] opacity-90">
@@ -40,7 +40,7 @@ const Hero = () => {
           />
         </picture>
       </div>
-      <div className="absolute w-full h-full bg-[var(--color-overlay)] -z-5 backdrop-blur-[.1rem] saturate-110"></div>
+      <div className="overlay"></div>
 
       <a
         href="#services"
