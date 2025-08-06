@@ -87,6 +87,7 @@ a {
   justify-content: center;
   cursor: pointer;
   transition: var(--transition-default);
+  font-weight: 600;
 }
 
 a {

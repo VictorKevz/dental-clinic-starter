@@ -23,7 +23,7 @@ export const FormButton = ({
   const variantClasses = {
     primary: "bg-[var(--color-primary)] text-[var(--color-text-on-primary)]",
     secondary:
-      "bg-[var(--color-bg-hover)] text-[var(--color-text-primary)] [box-shadow:var(--shadow-primary)]",
+      "bg-[var(--color-bg-hover)] text-[var(--color-text-primary)] border border-[var(--color-muted)] [box-shadow:var(--shadow-primary)]",
   };
 
   return (

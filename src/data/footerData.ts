@@ -138,7 +138,7 @@ export const footerData: FooterData = {
     icon: LocationOn,
   },
   companyInfo: {
-    name: "Zim Smile Dental Clinic",
+    name: "PEARLDENT Dental Clinic",
     tagline: "Your smile is our priority",
     copyright: `© ${new Date().getFullYear()} Zim Smile Dental Clinic. All rights reserved.`,
   },

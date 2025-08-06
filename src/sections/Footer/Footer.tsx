@@ -8,9 +8,9 @@ export const Footer = () => {
   return (
     <section className="w-full">
       {/* CTA Bar.................................................. */}
-      <div className="w-full min-h-[40dvh] 2xl:min-h-[30dvh] flex items-center justify-between bg-[var(--color-primary)] py-8 px-4 md:px-8 relative z-20 overflow-hidden">
+      <div className="w-full min-h-[40dvh] 2xl:min-h-[30dvh] flex flex-col md:flex-row text-center md:text-left items-center justify-between gap-5 bg-[var(--color-primary)] py-8 px-4 md:px-8 relative z-20 overflow-hidden">
         <div className="max-w-6xl">
-          <h3 className="text-2xl md:text-3xl !text-[var(--color-text-on-primary)] mb-1">
+          <h3 className="text-2xl md:text-4xl !text-[var(--color-text-on-primary)] mb-1">
             Ready to Transform Your Smile?
           </h3>
           <p className="!text-[var(--color-text-on-primary)]">
@@ -21,7 +21,7 @@ export const Footer = () => {
         <a className="max-w-[16rem] w-full text-[var(--color-accent)] bg-[var(--color-text-on-primary)] px-8 py-3 rounded-lg font-semibold">
           Book Now
         </a>
-        <figure className="pointer-events-none absolute left-0 -z-10 h-full w-full opacity-2.5">
+        <figure className="pointer-events-none absolute left-0 -z-10 h-full w-full opacity-4.5">
           <img
             src={pattern}
             alt=""
@@ -36,7 +36,7 @@ export const Footer = () => {
           {/* Company Info.................................................. */}
           <div className="flex flex-col  md:text-left items-center md:items-start">
             <div className="text-center md:text-left">
-              <h4 className="text-2xl  lg:text-3xl  !text-[var(--color-text-on-primary)]">
+              <h4 className="text-2xl !text-[var(--color-text-on-primary)]">
                 {companyInfo.name}
               </h4>
               <p className="!text-[var(--color-secondary)]">
@@ -88,7 +88,7 @@ export const Footer = () => {
                 <li key={link.id}>
                   <a
                     href={link.href}
-                    className="nav-link relative w-fit text-[var(--color-text-on-primary)] hover:text-[var(--color-accent)] transition-colors"
+                    className="nav-link relative w-fit text-[var(--color-text-on-primary)] hover:text-[var(--color-accent)] transition-colors opacity-90"
                   >
                     {link.label}
                   </a>
@@ -109,12 +109,6 @@ export const Footer = () => {
                   <a
                     key={contact.id}
                     href={contact.href}
-                    target={contact.type === "location" ? "_blank" : undefined}
-                    rel={
-                      contact.type === "location"
-                        ? "noopener noreferrer"
-                        : undefined
-                    }
                     className="flex items-center gap-2 text-[var(--color-text-on-primary)] hover:text-[var(--color-accent)] transition-colors"
                   >
                     <IconComponent sx={{ color: "var(--color-accent)" }} />
@@ -122,7 +116,9 @@ export const Footer = () => {
                       <span className="text-sm text-[var(--color-secondary)]">
                         {contact.label}
                       </span>
-                      <span className="font-medium">{contact.value}</span>
+                      <span className="font-normal opacity-90">
+                        {contact.value}
+                      </span>
                     </div>
                   </a>
                 );
@@ -142,6 +138,7 @@ export const Footer = () => {
               <a
                 className="text-[var(--color-accent)] opacity-50 hover:opacity-100"
                 href="https://chatbot.victorkevz.com/"
+                target="_blank"
               >
                 Victor Kevz
               </a>

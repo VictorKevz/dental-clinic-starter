@@ -15,7 +15,7 @@ export const Stats = () => {
           </li>
         ))}
       </ul>
-      <figure className="pointer-events-none absolute right-0 -z-10 h-full w-full  opacity-2.5">
+      <figure className="pointer-events-none absolute right-0 -z-10 h-full w-full  opacity-4.5">
         <img
           src={patternRight}
           alt=""
