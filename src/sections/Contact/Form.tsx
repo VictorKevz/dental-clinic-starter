@@ -303,7 +303,7 @@ export const Form = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="w-full h-fit flex flex-col gap-4 lg:gap-8 col-span-2 bg-[var(--color-bg-secondary)] rounded-xl min-h-[20vh] [box-shadow:var(--shadow-primary)] pb-8"
+      className="w-full h-full flex flex-col gap-4 lg:gap-8 col-span-2 bg-[var(--color-bg-secondary)] rounded-xl min-h-[20vh] [box-shadow:var(--shadow-primary)] pb-8"
     >
       <header className="w-full px-4 md:px-5 py-6 bg-[var(--color-bg-hover)] rounded-t-xl">
         <h3 className="text-2xl md:text-3xl">Book Your Appointment</h3>

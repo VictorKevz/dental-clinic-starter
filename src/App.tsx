@@ -8,6 +8,7 @@ import { Gallery } from "./sections/Gallery/Gallery";
 import { Contact } from "./sections/Contact/Contact";
 import { AlertProvider } from "./context/AlertContext";
 import { AlertMessage } from "./components/Alert";
+import { Footer } from "./sections/Footer/Footer";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Gallery />
           <Testimonials />
           <Contact />
+          <Footer />
         </main>
         <AlertMessage />
       </AlertProvider>

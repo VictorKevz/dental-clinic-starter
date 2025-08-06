@@ -24,7 +24,7 @@ export const Contact = () => {
         <Form />
         <WorkingHours />
       </div>
-      <figure className="w-full pointer-events-none absolute right-0 top-0 -z-10 opacity-5">
+      <figure className="w-full pointer-events-none absolute right-0 top-0 -z-10 opacity-2.5">
         <img
           src={patternRight}
           alt=""

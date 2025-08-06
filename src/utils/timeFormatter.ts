@@ -1,10 +1,4 @@
 import { WorkingHours } from "../data/workingHours";
-
-/**
- * Formats working hours data for display in the UI
- * @param workingHour - Working hour data from the centralized data source
- * @returns Formatted time string for display
- */
 export const formatWorkingHours = (workingHour: WorkingHours): string => {
   // If the day is closed, return "Closed"
   if (workingHour.closed) {
@@ -47,11 +41,6 @@ export const formatWorkingHours = (workingHour: WorkingHours): string => {
   return "Hours not available";
 };
 
-/**
- * Determines if a day should be styled as closed
- * @param workingHour - Working hour data
- * @returns boolean indicating if the day is closed
- */
 export const isDayClosed = (workingHour: WorkingHours): boolean => {
   return workingHour.closed === true;
 };

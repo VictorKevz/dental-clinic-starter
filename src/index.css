@@ -6,7 +6,7 @@
   /* Brand Colors */
   --color-primary: #007acc;
   --color-accent: #00aeef; /* Sky accent */
-  --color-secondary: #4a4a4a; /* For text emphasis */
+  --color-secondary: #889cc3; /* For text emphasis */
   --color-muted: #88888870;
 
   /* UI Backgrounds */
@@ -28,6 +28,7 @@
 
   /* Shadows */
   --shadow-primary: 0 0.5rem 2rem #0f172a25;
+  --shadow-color: 0 0.5rem 1.5rem #00aaff67;
 
   /* Z-indexes */
   --z-header: 1000;
@@ -42,7 +43,6 @@
   /* Brand Colors */
   --color-primary: #00aaff; /* Soft but vibrant blue */
   --color-accent: #38cfff; /* Lighter accent for CTAs */
-  --color-secondary: #cfcfcf; /* Light grey for text emphasis */
   --color-muted: #99999949; /* Softer muted tone for dark backgrounds */
 
   /* UI Backgrounds */
