@@ -26,7 +26,7 @@ export const Gallery = () => {
     setDirection(i > currentindex ? 1 : -1);
     setCurrrentIndex(i);
   };
-  const { image, title, description } = galleryData[currentindex];
+  const { image, mobileImage, title, description } = galleryData[currentindex];
 
   const swipeConfidenceThreshold = 5000; // Reduced threshold for easier swipes
   const swipePower = (offset: number, velocity: number) => {
@@ -126,11 +126,14 @@ export const Gallery = () => {
           }}
           className="w-full h-full absolute -z-10"
         >
-          <img
-            src={image}
-            alt={`Image showing: ${description}`}
-            className="w-full h-full object-cover"
-          />
+          <picture>
+            <source media="(min-width: 768px)" srcSet={image} />
+            <img
+              src={mobileImage}
+              alt={`Image showing: ${description}`}
+              className="w-full h-full object-cover"
+            />
+          </picture>
         </motion.figure>
       </AnimatePresence>
 

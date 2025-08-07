@@ -72,7 +72,7 @@ const Hero = () => {
         <picture className="h-full w-full">
           <img
             src="/hero/mobile-bg.webp"
-            alt="Victor Chatbot Background"
+            alt="Smiling African dentist with a child on the dental chair"
             className="h-full w-full object-cover"
           />
         </picture>
