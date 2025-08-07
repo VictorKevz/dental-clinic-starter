@@ -54,77 +54,76 @@ A modern, responsive landing page for PearlDent dental clinic built with React, 
 
 ## 📁 Project Structure
 
-📦src
- ┣ 📂assets
- ┃ ┣ 📂images
- ┃ ┃ ┣ 📜.DS_Store
- ┃ ┃ ┣ 📜pattern-left.svg
- ┃ ┃ ┣ 📜pattern-right.svg
- ┃ ┃ ┣ 📜stats-pattern.svg
- ┃ ┃ ┗ 📜ui-deco.png
- ┃ ┗ 📜.DS_Store
- ┣ 📂components
- ┃ ┣ 📂Buttons
- ┃ ┃ ┣ 📜ControlsButton.tsx
- ┃ ┃ ┣ 📜FloatingButton.tsx
- ┃ ┃ ┣ 📜FormButton.tsx
- ┃ ┃ ┣ 📜PaginationDots.tsx
- ┃ ┃ ┣ 📜ScrollButton.tsx
- ┃ ┃ ┗ 📜ThemeButton.tsx
- ┃ ┣ 📜Alert.tsx
- ┃ ┣ 📜AnimatedCounter.tsx
- ┃ ┣ 📜AnimationWrappers.tsx
- ┃ ┣ 📜CTALink.tsx
- ┃ ┣ 📜DateTimeSelector.tsx
- ┃ ┣ 📜DropDown.tsx
- ┃ ┣ 📜FormButton.tsx
- ┃ ┣ 📜InputTextField.tsx
- ┃ ┣ 📜Stats.tsx
- ┃ ┣ 📜TextAreaField.tsx
- ┃ ┗ 📜TimeSelector.tsx
- ┣ 📂context
- ┃ ┣ 📜AlertContext.tsx
- ┃ ┗ 📜ThemeContext.tsx
- ┣ 📂data
- ┃ ┣ 📜footerData.ts
- ┃ ┣ 📜galleryData.ts
- ┃ ┣ 📜servicesData.ts
- ┃ ┣ 📜testimonialData.ts
- ┃ ┗ 📜workingHours.ts
- ┣ 📂hooks
- ┃ ┣ 📜useDarkModeToggle.ts
- ┃ ┗ 📜useReducedMotion.ts
- ┣ 📂sections
- ┃ ┣ 📂Contact
- ┃ ┃ ┣ 📜Contact.tsx
- ┃ ┃ ┣ 📜Form.tsx
- ┃ ┃ ┗ 📜WorkingHours.tsx
- ┃ ┣ 📂Footer
- ┃ ┃ ┗ 📜Footer.tsx
- ┃ ┣ 📂Gallery
- ┃ ┃ ┗ 📜Gallery.tsx
- ┃ ┣ 📂Header
- ┃ ┃ ┗ 📜Navbar.tsx
- ┃ ┣ 📂Hero
- ┃ ┃ ┗ 📜Hero.tsx
- ┃ ┣ 📂Services
- ┃ ┃ ┗ 📜Services.tsx
- ┃ ┗ 📂Testimonials
- ┃ ┃ ┗ 📜Testimonials.tsx
- ┣ 📂styles
- ┃ ┗ 📜datepicker.css
- ┣ 📂types
- ┃ ┣ 📜alert.ts
- ┃ ┣ 📜contact.ts
- ┃ ┗ 📜theme.ts
- ┣ 📂utils
- ┃ ┗ 📜timeFormatter.ts
- ┣ 📜App.css
- ┣ 📜App.tsx
- ┣ 📜index.css
- ┣ 📜main.tsx
- ┣ 📜variants.ts
- ┗ 📜vite-env.d.ts
+```
+src/
+├── assets/
+│   └── images/
+│       ├── pattern-left.svg
+│       ├── pattern-right.svg
+│       ├── stats-pattern.svg
+│       └── ui-deco.png
+├── components/
+│   ├── Buttons/
+│   │   ├── ControlsButton.tsx
+│   │   ├── FloatingButton.tsx
+│   │   ├── FormButton.tsx
+│   │   ├── PaginationDots.tsx
+│   │   ├── ScrollButton.tsx
+│   │   └── ThemeButton.tsx
+│   ├── Alert.tsx
+│   ├── AnimatedCounter.tsx
+│   ├── AnimationWrappers.tsx
+│   ├── CTALink.tsx
+│   ├── DateTimeSelector.tsx
+│   ├── DropDown.tsx
+│   ├── InputTextField.tsx
+│   ├── Stats.tsx
+│   ├── TextAreaField.tsx
+│   └── TimeSelector.tsx
+├── context/
+│   ├── AlertContext.tsx
+│   └── ThemeContext.tsx
+├── data/
+│   ├── footerData.ts
+│   ├── galleryData.ts
+│   ├── servicesData.ts
+│   ├── testimonialData.ts
+│   └── workingHours.ts
+├── hooks/
+│   ├── useDarkModeToggle.ts
+│   └── useReducedMotion.ts
+├── sections/
+│   ├── Contact/
+│   │   ├── Contact.tsx
+│   │   ├── Form.tsx
+│   │   └── WorkingHours.tsx
+│   ├── Footer/
+│   │   └── Footer.tsx
+│   ├── Gallery/
+│   │   └── Gallery.tsx
+│   ├── Header/
+│   │   └── Navbar.tsx
+│   ├── Hero/
+│   │   └── Hero.tsx
+│   ├── Services/
+│   │   └── Services.tsx
+│   └── Testimonials/
+│       └── Testimonials.tsx
+├── styles/
+│   └── datepicker.css
+├── types/
+│   ├── alert.ts
+│   ├── contact.ts
+│   └── theme.ts
+├── utils/
+│   └── timeFormatter.ts
+├── App.css
+├── App.tsx
+├── index.css
+├── main.tsx
+├── variants.ts
+└── vite-env.d.ts
+```
 
 
 
