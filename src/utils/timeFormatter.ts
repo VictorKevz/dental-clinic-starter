@@ -1,16 +1,13 @@
 import { WorkingHours } from "../data/workingHours";
 export const formatWorkingHours = (workingHour: WorkingHours): string => {
-  // If the day is closed, return "Closed"
   if (workingHour.closed) {
     return "Closed";
   }
 
-  // If we have the time string already formatted, use it
   if (workingHour.time) {
     return workingHour.time;
   }
 
-  // Fallback: construct time string from startHour/endHour if needed
   if (
     workingHour.startHour !== undefined &&
     workingHour.endHour !== undefined
