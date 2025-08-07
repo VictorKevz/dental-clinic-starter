@@ -70,8 +70,13 @@ const Hero = () => {
       </StaggeredContainer>
       <div className="pointer-events-none absolute inset-0 h-full w-full -z-10">
         <picture className="h-full w-full">
+          <source
+            media="(min-width: 550px)"
+            srcSet="/hero/desktop-hero-bg.webp"
+          />
+
           <img
-            src="/hero/mobile-bg.webp"
+            src="/hero/mobile-hero-bg.webp"
             alt="Smiling African dentist with a child on the dental chair"
             className="h-full w-full object-cover"
           />
